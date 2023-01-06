@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+/*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+} */
+
+h1 {
+    font-size: 30px;
+    line-height: 50px;
+    color: #222;
+    font-family: 'Prosto One', cursive;
+}
+
+h2 {
+    font-size: 25px;
+    line-height: 40px;
+    color: #222;
+    font-family: 'Prosto One', cursive;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* /// NAVBAR SECTION /// */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+
+.section-p1 p {
+    color: #465b52;
+    /* margin:15px 0 20px 0; */
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ /* remove dots on list and space list out */
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+/* remove lines under list names, change color, size, and weight*/
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease; /*create hover transition to be smoother */
+}
+/* hover effect over navbar */
+#navbar li a:hover, 
+#navbar li a.active {
+    color:#088178;
+}
+/* underline effect after content has been clicked and hovered over */
+#navbar li a.active:after,
+#navbar li a:hover::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* removes cart and sidebar option from bigger website displays */
+#mobile {
+    display: none;
+    align-items: center;
+}
+/* removes close button from bigger website displays */
+#close {
+    display: none;
+}
+/*removes logo on bigger website displays */
+#header-logo {
+    display: none;
+}
+
+/* /// HOMEPAGE SECTION /// */
+
+#hero {
+    background:linear-gradient(179deg, #E3E6F3 40%, #BF6B5991 75%);
+    height: 90vh;
+    width: 100%;
+}
+/* center content in middle of page */
+#homepage {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hero h1 {
+    margin-bottom: 5px;
+}
+
+#hero h2 {
+    color: #088178;
+    margin-top: 0px;
+}
+
+#hero p {
+    font-family: 'Prosto One', cursive;
+    margin-top: 0px;
+}
+
+#hero button {
+    background-image: url('src/assets/button.png');
+    background-color: transparent;
+    color: black;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+#hero button:hover {
+    color:#088178
+}
+
+
+.logo {
+    border-radius: 50%; /* rounds the corners to create a circle */
+    width: 250px;
+    height: 250px;
+}
+
+/* /// FOOTER SECTION /// */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 0px;
+
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color:#222;
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* footer .logo {
+    margin-bottom: 30px;
+} */
+
+/*.social {
+    width: 40px;
+    height: auto;
+}
+
+.call-to-action-button {
+    margin-top: 30px;
+} */
+
+/* /// START MEDIA QUERY SECTION /// */
+
+@media (max-width:799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #E3E6F3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    /*activates cart and sidebar option on smaller displays */
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding: 20px;
+    }
+    /*activates logo on smaller displays */
+    #header-logo {
+        display: flex;
+        text-align: right;
+        position: absolute;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-variant: small-caps;
+        margin-left: 15px;
+    }
+
+    #header-logo a {
+        text-decoration: none;
+        color:#1a1a1a
+    }
+    /*activates close button on smaller displays */
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+    /*removes bag logo from navbar on smaller displays */
+    #lg-bag {
+        display: none;
+    }
+
+    #hero {
+        height: 70vh;
+        padding-left: 5px;
+        padding-bottom: 70px;
+        background-position: top 30% right 30%;
+    }
+}
